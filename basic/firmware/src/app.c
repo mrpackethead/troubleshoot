@@ -108,6 +108,16 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 int APP_ForceBootloaderCheck(void)
 {
+    #if defined (CHOCOLATE_BOX)
+    if(!DIP4StateGet())
+    {
+        return (1);
+    }
+    return(1);
+#endif
+
+#if defined (EFSTARTERKIT)
+    
     // For most of the basic bootloaders, the check of the switch (S1) and
     // the memory location will decide the question.
 #if defined(DRV_SDCARD_INSTANCES_NUMBER)
@@ -132,6 +142,9 @@ int APP_ForceBootloaderCheck(void)
     }
     
     return (0);
+    
+#endif    
+    
 }
 
 // *****************************************************************************
@@ -173,6 +186,17 @@ void APP_Initialize ( void )
 void APP_Tasks (void)
 {
 
+#if defined (CHOCOLATE_BOX)
+    // Blink the LED
+    if ((_CP0_GET_COUNT() & 0x2000000) != 0)
+    {
+        LED1On();
+    }
+    else
+    {
+        LED1Off();
+    }
+#else
     // Blink the LED
     if ((_CP0_GET_COUNT() & 0x2000000) != 0)
     {
@@ -182,6 +206,8 @@ void APP_Tasks (void)
     {
        BSP_LEDStateSet(BSP_LED_1,1);
     }
+    
+#endif    
 }
 
 

@@ -45,7 +45,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
 *******************************************************************************/
 // DOM-IGNORE-END
-#define EFSTARTERKIT
+
+#define CHOCOLATE_BOX
 #ifndef _SYSTEM_CONFIG_H
 #define _SYSTEM_CONFIG_H
 
@@ -57,7 +58,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 /*  This section Includes other configuration headers necessary to completely
     define this configuration.
 */
-#include "bsp.h"
 
 
 // DOM-IGNORE-BEGIN
@@ -91,88 +91,32 @@ extern "C" {
 #define SYS_CLK_BUS_PERIPHERAL_7            200000000ul
 #define SYS_CLK_BUS_PERIPHERAL_8            100000000ul
 #define SYS_CLK_CONFIG_PRIMARY_XTAL         24000000ul
-#define SYS_CLK_CONFIG_SECONDARY_XTAL       0ul
+#define SYS_CLK_CONFIG_SECONDARY_XTAL       32768ul
    
 /*** Ports System Service Configuration ***/
-#define SYS_PORT_A_ANSEL        0x3F20
-#define SYS_PORT_A_TRIS         0xFFFF
-#define SYS_PORT_A_LAT          0x0000
-#define SYS_PORT_A_ODC          0x0000
-#define SYS_PORT_A_CNPU         0x0000
-#define SYS_PORT_A_CNPD         0x0000
-#define SYS_PORT_A_CNEN         0x0000
-
-#define SYS_PORT_B_ANSEL        0x8FDF
-#define SYS_PORT_B_TRIS         0xFFDF
+#define SYS_PORT_B_ANSEL        0xFFC3
+#define SYS_PORT_B_TRIS         0xFFFF
 #define SYS_PORT_B_LAT          0x0000
 #define SYS_PORT_B_ODC          0x0000
-#define SYS_PORT_B_CNPU         0x7000
+#define SYS_PORT_B_CNPU         0x0000
 #define SYS_PORT_B_CNPD         0x0000
 #define SYS_PORT_B_CNEN         0x0000
 
-#define SYS_PORT_C_ANSEL        0xEFFF
-#define SYS_PORT_C_TRIS         0xFFFF
-#define SYS_PORT_C_LAT          0x0000
-#define SYS_PORT_C_ODC          0x0000
-#define SYS_PORT_C_CNPU         0x0000
-#define SYS_PORT_C_CNPD         0x0000
-#define SYS_PORT_C_CNEN         0x0000
-
-#define SYS_PORT_D_ANSEL        0xC100
-#define SYS_PORT_D_TRIS         0xFFFF
-#define SYS_PORT_D_LAT          0x0000
-#define SYS_PORT_D_ODC          0x0000
-#define SYS_PORT_D_CNPU         0x0000
-#define SYS_PORT_D_CNPD         0x0000
-#define SYS_PORT_D_CNEN         0x0000
-
-#define SYS_PORT_E_ANSEL        0xFFF0
-#define SYS_PORT_E_TRIS         0xFFFF
-#define SYS_PORT_E_LAT          0x0000
-#define SYS_PORT_E_ODC          0x0000
-#define SYS_PORT_E_CNPU         0x0000
-#define SYS_PORT_E_CNPD         0x0000
-#define SYS_PORT_E_CNEN         0x0000
-
-#define SYS_PORT_F_ANSEL        0xCEC0
-#define SYS_PORT_F_TRIS         0xFFFF
+#define SYS_PORT_F_ANSEL        0xFFF7
+#define SYS_PORT_F_TRIS         0xFFF7
 #define SYS_PORT_F_LAT          0x0000
 #define SYS_PORT_F_ODC          0x0000
 #define SYS_PORT_F_CNPU         0x0000
 #define SYS_PORT_F_CNPD         0x0000
 #define SYS_PORT_F_CNEN         0x0000
 
-#define SYS_PORT_G_ANSEL        0x8FFC
-#define SYS_PORT_G_TRIS         0xFFFF
+#define SYS_PORT_G_ANSEL        0xFF3F
+#define SYS_PORT_G_TRIS         0xFF3F
 #define SYS_PORT_G_LAT          0x0000
 #define SYS_PORT_G_ODC          0x0000
 #define SYS_PORT_G_CNPU         0x0000
 #define SYS_PORT_G_CNPD         0x0000
 #define SYS_PORT_G_CNEN         0x0000
-
-#define SYS_PORT_H_ANSEL        0x0040
-#define SYS_PORT_H_TRIS         0xFFF8
-#define SYS_PORT_H_LAT          0x0000
-#define SYS_PORT_H_ODC          0x0000
-#define SYS_PORT_H_CNPU         0x0000
-#define SYS_PORT_H_CNPD         0x0000
-#define SYS_PORT_H_CNEN         0x0000
-
-#define SYS_PORT_J_ANSEL        0x0000
-#define SYS_PORT_J_TRIS         0xFFFF
-#define SYS_PORT_J_LAT          0x0000
-#define SYS_PORT_J_ODC          0x0000
-#define SYS_PORT_J_CNPU         0x0000
-#define SYS_PORT_J_CNPD         0x0000
-#define SYS_PORT_J_CNEN         0x0000
-
-#define SYS_PORT_K_ANSEL        0xFF00
-#define SYS_PORT_K_TRIS         0xFFFF
-#define SYS_PORT_K_LAT          0x0000
-#define SYS_PORT_K_ODC          0x0000
-#define SYS_PORT_K_CNPU         0x0000
-#define SYS_PORT_K_CNPD         0x0000
-#define SYS_PORT_K_CNEN         0x0000
 
 
 /*** Command Processor System Service Configuration ***/
@@ -226,6 +170,16 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+
+/*** MIIM Driver Configuration ***/
+#define DRV_MIIM_ETH_MODULE_ID              ETH_ID_0
+#define DRV_MIIM_INSTANCES_NUMBER           1
+#define DRV_MIIM_INSTANCE_OPERATIONS        4
+#define DRV_MIIM_INSTANCE_CLIENTS           2
+#define DRV_MIIM_CLIENT_OP_PROTECTION   false
+#define DRV_MIIM_COMMANDS   false
+#define DRV_MIIM_DRIVER_OBJECT              DRV_MIIM_OBJECT_BASE_Default
+#define DRV_MIIM_DRIVER_INDEX               DRV_MIIM_INDEX_0              
 /*** Timer Driver Configuration ***/
 #define DRV_TMR_INTERRUPT_MODE             true
 #define DRV_TMR_INSTANCES_NUMBER           1
@@ -406,7 +360,7 @@ extern "C" {
 #define DRV_ETHPHY_NEG_INIT_TMO		    			1
 #define DRV_ETHPHY_NEG_DONE_TMO		    			2000
 #define DRV_ETHPHY_RESET_CLR_TMO				500
-#define DRV_ETHPHY_USE_DRV_MIIM                     false
+#define DRV_ETHPHY_USE_DRV_MIIM                     true
 
 
 
@@ -514,10 +468,6 @@ extern "C" {
 
 
 
-// *****************************************************************************
-/* BSP Configuration Options
-*/
-#define BSP_OSC_FREQUENCY 24000000
 
 
 // *****************************************************************************
@@ -527,32 +477,38 @@ extern "C" {
 // *****************************************************************************
 /*** Application Defined Pins ***/
 
-/*** Functions for BSP_LED_1 pin ***/
-#define BSP_LED_1Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_0)
-#define BSP_LED_1On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_0)
-#define BSP_LED_1Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_0)
-#define BSP_LED_1StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_0)
+/*** Functions for LED1 pin ***/
+#define LED1Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_6)
+#define LED1On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_6)
+#define LED1Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_6)
+#define LED1StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_6)
+#define LED1StateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_6, Value)
 
-/*** Functions for BSP_LED_2 pin ***/
-#define BSP_LED_2Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_1)
-#define BSP_LED_2On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_1)
-#define BSP_LED_2Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_1)
-#define BSP_LED_2StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_1)
+/*** Functions for LED2 pin ***/
+#define LED2Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_7)
+#define LED2On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_7)
+#define LED2Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_7)
+#define LED2StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_7)
+#define LED2StateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_7, Value)
 
-/*** Functions for BSP_LED_3 pin ***/
-#define BSP_LED_3Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_2)
-#define BSP_LED_3On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_2)
-#define BSP_LED_3Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_2)
-#define BSP_LED_3StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_H, PORTS_BIT_POS_2)
+/*** Functions for nRST pin ***/
+#define nRSTToggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3)
+#define nRSTOn() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3)
+#define nRSTOff() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3)
+#define nRSTStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3)
+#define nRSTStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3, Value)
 
-/*** Functions for BSP_SWITCH_1 pin ***/
-#define BSP_SWITCH_1StateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_B, PORTS_BIT_POS_12)
+/*** Functions for DIP4 pin ***/
+#define DIP4StateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_B, PORTS_BIT_POS_5)
 
-/*** Functions for BSP_SWITCH_2 pin ***/
-#define BSP_SWITCH_2StateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_B, PORTS_BIT_POS_13)
+/*** Functions for DIP3 pin ***/
+#define DIP3StateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_B, PORTS_BIT_POS_4)
 
-/*** Functions for BSP_SWITCH_3 pin ***/
-#define BSP_SWITCH_3StateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_B, PORTS_BIT_POS_14)
+/*** Functions for DIP3 pin ***/
+#define DIP3StateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_B, PORTS_BIT_POS_3)
+
+/*** Functions for DIP1 pin ***/
+#define DIP1StateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_B, PORTS_BIT_POS_2)
 
 
 /*** Application Instance 0 Configuration ***/

@@ -27,7 +27,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=basic.X
 
 # Active Configuration
-DEFAULTCONF=choc
+DEFAULTCONF=udp_pic32mz_ef_sk
 CONF=${DEFAULTCONF}
 
 # All Configurations

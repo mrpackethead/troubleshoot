@@ -11,6 +11,23 @@
         <logicalFolder name="system_config"
                        displayName="system_config"
                        projectFiles="true">
+          <logicalFolder name="f2" displayName="choc" projectFiles="true">
+            <logicalFolder name="f1" displayName="framework" projectFiles="true">
+              <logicalFolder name="f1" displayName="system" projectFiles="true">
+                <logicalFolder name="f1" displayName="devcon" projectFiles="true">
+                  <logicalFolder name="f1" displayName="src" projectFiles="true">
+                    <itemPath>../src/system_config/choc/framework/system/devcon/src/sys_devcon_local.h</itemPath>
+                  </logicalFolder>
+                  <itemPath>../src/system_config/choc/framework/system/devcon/sys_devcon.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f2" displayName="reset" projectFiles="true">
+                  <itemPath>../src/system_config/choc/framework/system/reset/sys_reset.h</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+            <itemPath>../src/system_config/choc/system_config.h</itemPath>
+            <itemPath>../src/system_config/choc/system_definitions.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="udp_pic32mz_ef_sk" projectFiles="true">
             <logicalFolder name="f2" displayName="bsp" projectFiles="true">
               <itemPath>../src/system_config/udp_pic32mz_ef_sk/bsp/bsp.h</itemPath>
@@ -75,6 +92,15 @@
               <itemPath>../../../../../framework/driver/ethphy/src/drv_ethphy_local.h</itemPath>
             </logicalFolder>
             <itemPath>../../../../../framework/driver/ethphy/drv_ethphy.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f8" displayName="miim" projectFiles="true">
+            <logicalFolder name="f1" displayName="config" projectFiles="true">
+              <itemPath>../../../../../framework/driver/miim/config/drv_miim_config.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="src" projectFiles="true">
+              <itemPath>../../../../../framework/driver/miim/src/drv_miim_local.h</itemPath>
+            </logicalFolder>
+            <itemPath>../../../../../framework/driver/miim/drv_miim.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="sdcard" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
@@ -384,6 +410,9 @@
                    displayName="Linker Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="system_config" projectFiles="true">
+        <logicalFolder name="f12" displayName="choc" projectFiles="true">
+          <itemPath>../src/system_config/choc/btl_mz.ld</itemPath>
+        </logicalFolder>
         <logicalFolder name="f11"
                        displayName="sdcard_pic32mz_ef_sk_meb2"
                        projectFiles="true">
@@ -440,6 +469,39 @@
         <logicalFolder name="system_config"
                        displayName="system_config"
                        projectFiles="true">
+          <logicalFolder name="f1" displayName="choc" projectFiles="true">
+            <logicalFolder name="f1" displayName="framework" projectFiles="true">
+              <logicalFolder name="f1" displayName="system" projectFiles="true">
+                <logicalFolder name="f1" displayName="clk" projectFiles="true">
+                  <logicalFolder name="f1" displayName="src" projectFiles="true">
+                    <itemPath>../src/system_config/choc/framework/system/clk/src/sys_clk_pic32mz.c</itemPath>
+                  </logicalFolder>
+                </logicalFolder>
+                <logicalFolder name="f2" displayName="devcon" projectFiles="true">
+                  <logicalFolder name="f1" displayName="src" projectFiles="true">
+                    <itemPath>../src/system_config/choc/framework/system/devcon/src/sys_devcon.c</itemPath>
+                    <itemPath>../src/system_config/choc/framework/system/devcon/src/sys_devcon_pic32mz.c</itemPath>
+                    <itemPath>../src/system_config/choc/framework/system/devcon/src/sys_devcon_cache_pic32mz.S</itemPath>
+                    <itemPath>../src/system_config/choc/framework/system/devcon/src/sys_devcon_cache.h</itemPath>
+                  </logicalFolder>
+                </logicalFolder>
+                <logicalFolder name="f3" displayName="ports" projectFiles="true">
+                  <logicalFolder name="f1" displayName="src" projectFiles="true">
+                    <itemPath>../src/system_config/choc/framework/system/ports/src/sys_ports_static.c</itemPath>
+                  </logicalFolder>
+                </logicalFolder>
+                <logicalFolder name="f4" displayName="reset" projectFiles="true">
+                  <logicalFolder name="f1" displayName="src" projectFiles="true">
+                    <itemPath>../src/system_config/choc/framework/system/reset/src/sys_reset.c</itemPath>
+                  </logicalFolder>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+            <itemPath>../src/system_config/choc/system_init.c</itemPath>
+            <itemPath>../src/system_config/choc/system_interrupt.c</itemPath>
+            <itemPath>../src/system_config/choc/system_exceptions.c</itemPath>
+            <itemPath>../src/system_config/choc/system_tasks.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="f2" displayName="udp_pic32mz_ef_sk" projectFiles="true">
             <logicalFolder name="f2" displayName="bsp" projectFiles="true">
               <itemPath>../src/system_config/udp_pic32mz_ef_sk/bsp/bsp.c</itemPath>
@@ -504,6 +566,13 @@
             <itemPath>../../../../../framework/driver/ethphy/src/dynamic/drv_ethphy.c</itemPath>
             <itemPath>../../../../../framework/driver/ethphy/src/dynamic/drv_extphy_smsc8740.c</itemPath>
             <itemPath>../../../../../framework/driver/ethphy/src/dynamic/drv_extphy_dp83848.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f7" displayName="miim" projectFiles="true">
+            <logicalFolder name="f1" displayName="src" projectFiles="true">
+              <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
+                <itemPath>../../../../../framework/driver/miim/src/dynamic/drv_miim.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="sdcard" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
@@ -701,6 +770,8 @@
     <Elem>..\src\system_config\udp_pic32mz_da_sk_intddr</Elem>
     <Elem>..\src\sdcard_pic32mz_ef_sk_meb2</Elem>
     <Elem>..\src\system_config\sdcard_pic32mz_ef_sk_meb2</Elem>
+    <Elem>..\src\choc</Elem>
+    <Elem>..\src\system_config\choc</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -883,6 +954,22 @@
         </C32CPP>
         <C32Global>
         </C32Global>
+      </item>
+      <item path="../../../../../framework/driver/miim/config/drv_miim_config.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../../../../../framework/driver/miim/drv_miim.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../../../../../framework/driver/miim/src/drv_miim_local.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../../../../../framework/driver/miim/src/dynamic/drv_miim.c"
+            ex="true"
+            overriding="false">
       </item>
       <item path="../../../../../framework/driver/sdcard/drv_sdcard.h"
             ex="true"
@@ -2416,6 +2503,72 @@
         <C32Global>
         </C32Global>
       </item>
+      <item path="../src/system_config/choc/btl_mz.ld" ex="true" overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/clk/src/sys_clk_pic32mz.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/devcon/src/sys_devcon.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/devcon/src/sys_devcon_cache.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/devcon/src/sys_devcon_cache_pic32mz.S"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/devcon/src/sys_devcon_local.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/devcon/src/sys_devcon_pic32mz.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/devcon/sys_devcon.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/ports/src/sys_ports_static.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/reset/src/sys_reset.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/framework/system/reset/sys_reset.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/system_config.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/system_definitions.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/system_exceptions.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/system_init.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/system_interrupt.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/choc/system_tasks.c"
+            ex="true"
+            overriding="false">
+      </item>
       <item path="../src/system_config/sdcard_pic32mz_ef_sk_meb2/btl_mz.ld"
             ex="true"
             overriding="false">
@@ -2859,6 +3012,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>../../../../../bin/framework/peripheral/PIC32MZ2048EFM100_peripherals.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -2880,6 +3034,82 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/bsp/bsp.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/bsp/bsp.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/btl_mz.ld"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/clk/src/sys_clk_pic32mz.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/devcon/src/sys_devcon.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/devcon/src/sys_devcon_cache.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/devcon/src/sys_devcon_cache_pic32mz.S"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/devcon/src/sys_devcon_local.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/devcon/src/sys_devcon_pic32mz.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/devcon/sys_devcon.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/ports/src/sys_ports_static.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/reset/src/sys_reset.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/framework/system/reset/sys_reset.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/system_config.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/system_definitions.h"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/system_exceptions.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/system_init.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/system_interrupt.c"
+            ex="true"
+            overriding="false">
+      </item>
+      <item path="../src/system_config/udp_pic32mz_ef_sk/system_tasks.c"
+            ex="true"
+            overriding="false">
+      </item>
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
@@ -2888,12 +3118,13 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/system_config/choc;../src/choc;../../../../../framework;../src/system_config/choc/framework"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="isolate-each-function" value="false"/>
+        <property key="isolate-each-function" value="true"/>
         <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value=""/>
+        <property key="optimization-level" value="-O1"/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
@@ -2947,7 +3178,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value=""/>
+        <property key="heap-size" value="44960"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -2957,7 +3188,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros" value=""/>
-        <property key="remove-unused-sections" value="false"/>
+        <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
         <property key="serial-origin" value=""/>
@@ -2980,9 +3211,9 @@
         <property key="extra-include-directories" value=""/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="isolate-each-function" value="false"/>
+        <property key="isolate-each-function" value="true"/>
         <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value=""/>
+        <property key="optimization-level" value="-O1"/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
